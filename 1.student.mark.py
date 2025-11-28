@@ -26,7 +26,6 @@ def add_course():
     course_list.append(course)
 
 me = {
-    "name",
-    "birthday"
+    "name" : "Duc Anh",
+    "BoD" : "08/02/2006"
 }
-print(me)
