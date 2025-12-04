@@ -3,7 +3,7 @@ class Thing:
         self.name = name
         self.id = id
         
-class Student(Thing,):
+class Student(Thing):
     def __init__(self,name,id,DoB):
         super().__init__(name,id)
         self.DoB = DoB
