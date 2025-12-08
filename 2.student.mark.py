@@ -7,6 +7,7 @@ class thing:
     def display(self):
         print(f"Name: {self.name}")
         print(f"ID: {self.id}")
+        print()
         
 class student(thing):
     def __init__(self, name, id, DoB):
@@ -14,16 +15,16 @@ class student(thing):
         self.DoB = DoB
         self.mark = {}
         
-    @property
-    def display(self):
+    def display_info(self):
         print(f"Name: {self.name}")
         print(f"ID: {self.id}")
         print(f"Date of Birth: {self.DoB}")
         print()
+
+    def display_score(self):
         for i in self.mark:
             print(f"Subject ID: {i}")
-            print(f"Mark: {self.mark[i]}")
-            print()
+            print(f"Mark: {mark[i]}")
         
 class course(thing):
     def __init__(self, name, id):
@@ -40,7 +41,8 @@ class list:
 
     def display_student(self):
         for i in self.student_list:
-            i.display
+            i.display_info
+            i.display_score
 
     def add_course(self, name, id):
         c = course(name, id)
