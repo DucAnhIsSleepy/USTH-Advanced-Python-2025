@@ -17,7 +17,7 @@ def add_course(name: str, id: str):
 def display_student():
     for i in student_list:
         for l in i:
-            print(f"Student {l}: {i[l]}")
+            print(f"{l}: {i[l]}")
             
 def display_course():
     for i in course_list:
@@ -25,11 +25,30 @@ def display_course():
             print(f"Course {l}: {i[l]}")
 
 def add_score(sid: str, cid: str, mark):
-    #if sid not in 
-    pass
+    check = True
+    for i in course_list:
+        if i["ID"] == cid:
+            check = False
+            break
+        
+    if check:
+        print("Course ID Not Found")
+        return
+    
+    check = True
+    for i in student_list:
+        if i["ID"] == sid:
+            i.update({f"Subject ID {cid} score":mark})
+            return
+        
+    if check:
+        print("Student ID Not Found")
+        return
 
 def main():
     add_student("Phạm Đức Anh","2410088","08/02/2006")
+    add_course("Basic Programming","1")
+    add_score("2410088","1",16.8)
     display_student()
     
 if __name__ == "__main__":
